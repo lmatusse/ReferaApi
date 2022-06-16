@@ -3,7 +3,7 @@
 
 ## PreRequisites
  [mysql](https://www.mysql.com/downloads/)
- 
+
  [Node](https://nodejs.org/en/download/)
 
 ### Setup
