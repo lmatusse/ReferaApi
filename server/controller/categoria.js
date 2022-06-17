@@ -6,9 +6,13 @@ module.exports = {
 
         try {
 
-            const categoties = await Categoria.find({});
+            const response = await Categoria.findAll({});
 
-            res.status(201).send(categoties);
+            const categories = [];
+            categories.push(response);
+            console.log(categories);
+
+            res.status(201).send(response);
 
         } catch (e) {
             console.log(e);
@@ -20,12 +24,12 @@ module.exports = {
 
     async create(req, res) {
         try {
-            const categoties = await Categoria
+            const categories = await Categoria
                 .create({
                     name: req.body.name,
                 });
 
-            res.status(201).send(categoties);
+            res.status(201).send(categories);
         } catch (e) {
             console.log(e);
             res.status(400).send(e);
@@ -36,11 +40,11 @@ module.exports = {
     async update(req, res) {
 
         try {
-            const categoties = await Categoria.find({
+            const categories = await Categoria.find({
                 id: req.params.categoriaId
             });
 
-            if (categoties) {
+            if (categories) {
 
                 const updatedCatefory = await Categoria.update({
                     id: req.body.name
