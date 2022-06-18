@@ -1,3 +1,4 @@
+const { attributes } = require('sequelize/lib/model');
 const categoria = require('./categoria');
 
 const Ordem = require('../models').Ordem;
@@ -13,7 +14,6 @@ module.exports = {
                 }
             });*/
             const ordem = await Ordem.findAll({
-                inclide: ['categoria'],
                 where: {
                     id: req.params.categoriaId
                 }
