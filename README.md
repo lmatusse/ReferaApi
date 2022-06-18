@@ -61,7 +61,7 @@ Describe how you would structure the database to account for
 
 Database structure considering the above points
 
-
+<img src="https://github.com/lmatusse/ReferaApi/blob/master/Estruturadb.png"/>
 
 	
 NB: I put the basic attributes just for the illustration already in the development would have more attributes.
