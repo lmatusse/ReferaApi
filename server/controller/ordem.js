@@ -1,3 +1,5 @@
+const categoria = require('./categoria');
+
 const Ordem = require('../models').Ordem;
 const Categoria = require('../models').Categoria;
 
@@ -10,7 +12,8 @@ module.exports = {
                     id: req.params.categoriaId
                 }
             });*/
-            const ordem = await Ordem.find({
+            const ordem = await Ordem.findAll({
+                inclide: ['categoria'],
                 where: {
                     id: req.params.categoriaId
                 }
