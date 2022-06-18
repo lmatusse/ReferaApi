@@ -51,5 +51,40 @@ And I selected the Enable Automatic Deploys option, this will make every time I 
 
 
 
+
+
+Describe how you would structure the database to account for 
+    • Real estate agency registration data 
+    • Company registration data 
+    • Contact registration data 
+
+
+Database structure considering the above points
+
+
+
+	
+NB: I put the basic attributes just for the illustration already in the development would have more attributes.
+
+
+Describe what needs to be changed on the API you implemented
+
+I would need to create models and migrations to create the tables with the proper relationships specified in model in the referaApi database.
+With the relationship between ordem and company it is from ManyToMany as specified in the diagram above and we will have a model and a company_order migration that will have the ids of the entities involved to reference them.
+In the order model, the following code would be increased in the associate function for association between models
+
+order.belongsToMany(models.company_order,{
+
+foreignKey:orderId
+
+})
+I would create the controllers that will have the functions so that from an endpoint we can make queries, register and update our database.
+
+In the routes/index file I would add the endpoints referring to the created controllers that allow us to execute the queries.
+
+
+
+
+
 Difficulties:
 I had some difficulties in building the api but nothing that I couldn't solve, but I couldn't return the category name in the table.
